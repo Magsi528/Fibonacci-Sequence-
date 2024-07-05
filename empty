@@ -1,1 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+
+void fibonacci(int n) {
+    if (n < 1) {
+        cout << "Please enter a number greater than 0" << endl;
+        return;
+    }
+//these datatypes will help us store large numbers
+    unsigned long long a = 0; 
+    unsigned long long b = 1;
+
+    cout << "Fibonacci sequence: ";
+
+    for (int i = 1; i <= n; ++i) {
+        cout << a << " ";
+        unsigned long long temp = a + b;
+        a = b;
+        b = temp;
+    }
+    cout << endl;
+}
+
+int main() {
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    fibonacci(n);
+
+    return 0;
+}
 
